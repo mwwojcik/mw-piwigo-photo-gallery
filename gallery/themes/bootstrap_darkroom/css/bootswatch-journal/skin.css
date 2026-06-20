@@ -1,0 +1,79 @@
+/* Search page */
+.filetypes-option label .ext-badge,
+.added_by-option label .added_by-badge,
+.date_posted-badge,
+.date_created-badge,
+.ratios-option label .ratio-badge,
+.ratings-option label .ratings-badge{
+  background-color:var(--primary) !important;
+}
+
+.filetypes-option label .checked-icon,
+.added_by-option label .checked-icon,
+.date_posted-option label .checked-icon,
+.date_created-option label .checked-icon,
+.ratios-option label .checked-icon,
+.ratings-option label .checked-icon{
+  color:var(--primary) !important;
+}
+.date_posted-option .accordion-toggle:hover,
+.date_created-option .accordion-toggle:hover{
+  color:var(--primary);
+}
+
+.slider-info{
+  color:#bbb!important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-slider-range.ui-widget-header.ui-corner-all{
+  border: 1px solid #aaa;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-slider .ui-slider-range{
+  background: #aaa;
+}
+
+.mcs-container input[type="number"],
+.mcs-container input[type="number"]:focus{
+  color: #222;
+  background-color: #aaa;
+}
+
+
+/* Related tages */
+
+span.related-tags{
+  background-color:#f8f9fa;
+}
+
+span.related-tags:hover{
+  background-color:#aaa;
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: var(--secondary);
+  border: 1px solid #222;
+  color: #fff;
+}
+
+span.related-tags .tag-counter{
+  color:#ccc;
+}
+
+span.related-tags a{
+  color:#222;
+  font-family: "News Cycle","Arial Narrow Bold",sans-serif;
+}
+
+#selected-tags-container .selected-related-tag a{
+  color:#fff!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#000!important;
+}

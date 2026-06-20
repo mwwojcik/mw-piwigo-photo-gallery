@@ -1,0 +1,97 @@
+/* Search page */
+.filetypes-option label .ext-badge,
+.added_by-option label .added_by-badge,
+.date_posted-badge,
+.date_created-badge,
+.ratios-option label .ratio-badge,
+.ratings-option label .ratings-badge{
+  background-color:var(--primary) !important;
+}
+
+.filetypes-option label .checked-icon,
+.added_by-option label .checked-icon,
+.date_posted-option label .checked-icon,
+.date_created-option label .checked-icon,
+.ratios-option label .checked-icon,
+.ratings-option label .checked-icon{
+  color:var(--primary) !important;
+}
+.date_created-option .accordion-toggle:hover
+.date_posted-option .accordion-toggle:hover{
+  color:var(--white);
+}
+.filter .breadcrumb-item,
+.preset_posted_date .date_posted-option input:checked + label,
+.custom_posted_date .selected input:checked,
+.preset_created_date .date_created-option input:checked + label,
+.custom_created_date .selected input:checked,
+.added_by-option input:checked + label,
+.filetypes-option input:checked + label,
+.date_posted-option .selected label,
+.date_posted-option .selected .accordion-toggle,
+.date_created-option .selected label,
+.date_created-option .selected .accordion-toggle,
+.ratios-option input:checked + label,
+.ratings-option input:checked + label{
+  background: #00bc8c !important;
+  color:black;
+}
+
+.slider-info{
+  color:#bbb!important;
+}
+.ui-state-default, .ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-slider-range.ui-widget-header.ui-corner-all{
+  border: 1px solid #00bc8c;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-slider .ui-slider-range{
+  background: #00bc8c;
+}
+
+.mcs-container input[type="number"],
+.mcs-container input[type="number"]:focus{
+  background-color:#777;
+  color:#eee;
+}
+
+.mcs-side-results.search-in-set-button a{
+  color: #fff!important;
+}
+
+/* Related tages */
+
+span.related-tags{
+  background-color:#282828;
+}
+
+span.related-tags:hover{
+  background-color:var(--primary);
+}
+
+#selected-tags-container .selected-related-tag {
+  background-color: #00bc8c;
+  border: 1px solid #303030;
+  color: #4f4f4f;
+}
+
+span.related-tags .tag-counter{
+  color:#ACACAC;
+}
+
+span.related-tags a{
+  color:#fff;
+}
+
+#selected-tags-container .selected-related-tag a{
+  color:#000!important;
+}
+
+#selected-tags-container .selected-related-tag a:hover,
+#selected-tags-container .selected-related-tag a.selected-related-tag-remove:hover{
+  color:#fff!important;
+}

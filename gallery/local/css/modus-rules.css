@@ -1,0 +1,12 @@
+/* Plik nie powstanie dopóki niżej nie zostanie coś wpisane.Po uzupełnieniu wymaganych informacji plik zostanie utworzony. */
+
+/* Ukrycie nazw plików pod zdjęciami */
+.thumbnails .wrap2 {
+ border: none !important;
+}
+
+/* Ukrycie nazw plików i legendy pod zdjęciami */
+.thumbnails .thumbLegend {
+    display: none !important;
+}
+

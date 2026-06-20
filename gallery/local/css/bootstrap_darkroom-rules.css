@@ -1,0 +1,493 @@
+.mw-gallery-card div {
+    display: none !important;
+}
+
+.navbar,
+.navbar-default,
+.nav {
+    background: #202020 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-brand,
+.navbar-default .navbar-nav > li > a {
+    color: #888 !important;
+}
+
+.navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover {
+    color: #ccc !important;
+}
+
+.copyright {
+    display: none !important;
+}
+
+body .mw-page {
+    background: #101315 !important;
+    color: #d6d0c6 !important;
+    margin-top: -50px !important;
+    padding-bottom: 100px !important;
+}
+
+body .mw-home {
+    background: #101315 !important;
+}
+
+body .mw-home img {
+    display: block !important;
+    max-width: 100% !important;
+}
+
+/* HERO */
+
+body .mw-hero {
+    position: relative !important;
+    height: 620px !important;
+    overflow: hidden !important;
+}
+
+body .mw-hero-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    filter: brightness(.72) saturate(.9) !important;
+}
+
+body .mw-hero::after {
+    content: "";
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    background:
+        linear-gradient(to right, rgba(8,10,12,.78), rgba(8,10,12,.25), rgba(8,10,12,.18)),
+        linear-gradient(to bottom, rgba(0,0,0,.1), rgba(16,19,21,.9)) !important;
+}
+
+body .mw-hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 2 !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+body .mw-hero-content {
+    width: min(1180px, calc(100% - 80px)) !important;
+    margin: 0 auto !important;
+    transform: translateY(90px) !important;
+}
+
+body .mw-hero-text {
+    max-width: 460px !important;
+}
+
+body .mw-hero h1 {
+    margin: 0 !important;
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif !important;
+     font-size: clamp(2.6rem, 4vw, 4rem) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.015em !important;
+    font-style: italic !important;
+    font-weight: 300 !important;
+    color: #c89b52 !important;
+}
+
+body .mw-hero p {
+    margin: 0 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-style: italic !important;
+    font-size: clamp(1.15rem, 1.7vw, 1.65rem) !important;
+    line-height: 1.5 !important;
+    color: #d8d0c5 !important;
+}
+
+body .mw-scroll {
+    display: inline-block !important;
+    margin-top: 70px !important;
+    color: #c89b52 !important;
+    font-size: .68rem !important;
+    letter-spacing: .28em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+}
+
+/* WSPÓLNE */
+
+body .mw-section {
+    width: min(1180px, calc(100% - 80px)) !important;
+    margin: 0 auto !important;
+}
+
+body .mw-label {
+    margin-bottom: 16px !important;
+    color: #c89b52 !important;
+    font-size: .72rem !important;
+    letter-spacing: .32em !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+}
+
+/* ABOUT */
+
+body .mw-about {
+    display: grid !important;
+    grid-template-columns: 460px 680px !important;
+    gap: 70px !important;
+    align-items: center !important;
+    padding: 90px 0 70px !important;
+}
+
+body .mw-about h2 {
+    margin: 0 0 24px !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    color: #eee8df !important;
+}
+
+body .mw-about p {
+    margin: 0 0 26px !important;
+    font-size: 1.03rem !important;
+    line-height: 1.9 !important;
+    color: #aaa !important;
+}
+
+body .mw-about-image {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+body .mw-about-image img {
+    width: 100% !important;
+    aspect-ratio: 3 / 2 !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    filter:
+        brightness(.64)
+        saturate(.72)
+        contrast(.95) !important;
+}
+
+body .mw-about-image::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0,0,0,0) 35%,
+            rgba(0,0,0,.12) 65%,
+            rgba(0,0,0,.28) 100%
+        ) !important;
+}
+
+/* WYBÓR AUTORA */
+
+body .mw-author-choice {
+    padding: 40px 0 70px !important;
+}
+
+body .mw-photo-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 14px !important;
+}
+
+body .mw-photo-grid a {
+    display: block !important;
+    overflow: hidden !important;
+    background: #000 !important;
+}
+
+body .mw-photo-grid img {
+    width: 100% !important;
+    aspect-ratio: 3 / 2 !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    filter: brightness(.82) saturate(.88) !important;
+    transition: transform .35s ease, filter .35s ease !important;
+}
+
+body .mw-photo-grid a:hover img {
+    transform: scale(1.03) !important;
+    filter: brightness(1) saturate(1) !important;
+}
+
+/* GALERIE */
+
+body .mw-galleries {
+    padding: 30px 0 90px !important;
+    border-top: 1px solid rgba(255,255,255,.08) !important;
+}
+
+body .mw-gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 18px !important;
+}
+
+body .mw-gallery-card {
+    display: block !important;
+    overflow: hidden !important;
+    background: #080909 !important;
+    color: #ddd !important;
+    text-decoration: none !important;
+    box-shadow: 0 18px 50px rgba(0,0,0,.22) !important;
+}
+
+body .mw-gallery-card img {
+    width: 100% !important;
+    aspect-ratio: 3 / 2 !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    filter: brightness(.82) saturate(.9) !important;
+    transition: transform .35s ease, filter .35s ease !important;
+}
+
+body .mw-gallery-card:hover img {
+    transform: scale(1.03) !important;
+    filter: brightness(1) saturate(1) !important;
+}
+
+/* LINKI */
+
+body .mw-link-row {
+    margin-top: 30px !important;
+    text-align: center !important;
+}
+
+body .mw-link-row a {
+    color: #c89b52 !important;
+    font-size: .72rem !important;
+    letter-spacing: .28em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+}
+
+body .mw-link-row a:hover {
+    color: #fff !important;
+}
+
+/* PUSTY CONTENT PIWIGO */
+
+body.section-categories #content:empty {
+    display: none !important;
+}
+
+/* RESPONSYWNOŚĆ */
+
+@media (max-width: 960px) {
+    body .mw-page {
+        margin-top: -30px !important;
+        overflow-x: hidden !important;
+    }
+
+    body .mw-home {
+        overflow-x: hidden !important;
+    }
+
+    body .mw-hero {
+        height: 500px !important;
+    }
+
+    body .mw-section,
+    body .mw-hero-content {
+        width: calc(100% - 40px) !important;
+        max-width: none !important;
+    }
+
+    body .mw-about {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 34px !important;
+        padding: 70px 0 60px !important;
+    }
+
+    body .mw-about-text,
+    body .mw-about-image {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    body .mw-about-image {
+        order: -1 !important;
+    }
+
+    body .mw-photo-grid,
+    body .mw-gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    html,
+    body {
+        overflow-x: hidden !important;
+    }
+
+    body .mw-page {
+        margin-top: -20px !important;
+        padding-bottom: 70px !important;
+        overflow-x: hidden !important;
+    }
+
+    body .mw-home {
+        overflow-x: hidden !important;
+    }
+
+    body .mw-hero {
+        height: 330px !important;
+    }
+
+    body .mw-hero-content,
+    body .mw-section {
+        width: calc(100% - 32px) !important;
+        max-width: none !important;
+    }
+
+    body .mw-hero h1 {
+        font-size: 2.15rem !important;
+        line-height: 1.08 !important;
+        margin-bottom: 18px !important;
+    }
+
+    body .mw-hero p {
+        font-size: 1rem !important;
+        line-height: 1.45 !important;
+    }
+
+    body .mw-scroll {
+        display: none !important;
+    }
+
+    body .mw-about {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        padding: 54px 0 54px !important;
+    }
+
+    body .mw-about-image {
+        order: -1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    body .mw-about-text {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    body .mw-about h2 {
+        font-size: 1.55rem !important;
+        line-height: 1.22 !important;
+        margin-bottom: 22px !important;
+    }
+
+    body .mw-about p {
+        font-size: .95rem !important;
+        line-height: 1.75 !important;
+        margin-bottom: 20px !important;
+    }
+
+    body .mw-label {
+        font-size: .62rem !important;
+        letter-spacing: .28em !important;
+    }
+
+    body .mw-photo-grid,
+    body .mw-gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+    }
+
+    body .mw-author-choice {
+        padding: 30px 0 58px !important;
+    }
+
+    body .mw-galleries {
+        padding: 28px 0 64px !important;
+    }
+}
+
+/* TYLKO TYPOGRAFIA — BEZ ZMIANY UKŁADU */
+
+body .mw-hero h1,
+body .mw-hero p,
+body .mw-about h2 {
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif !important;
+}
+
+body .mw-label,
+body .mw-about p,
+body .mw-scroll,
+body .mw-link-row a {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body .mw-hero h1 {
+    letter-spacing: -0.02em !important;
+    font-weight: 300 !important;
+}
+
+body .mw-hero p {
+    font-weight: 300 !important;
+}
+
+body .mw-about h2 {
+    letter-spacing: -0.01em !important;
+    font-weight: 300 !important;
+}
+
+body .mw-label,
+body .mw-scroll,
+body .mw-link-row a {
+    font-weight: 500 !important;
+}
+
+
+
+html,
+body,
+#wrapper,
+#content,
+.container,
+.container-fluid {
+    background: #101315 !important;
+    background-color: #101315 !important;
+}
+
+body.section-categories #wrapper,
+body.section-categories #content,
+body.section-categories .container,
+body.section-categories .container-fluid,
+body.section-categories .content-grid,
+body.section-categories .content-list {
+    background: #101315 !important;
+    background-color: #101315 !important;
+}
+
+/* pasek breadcrumb/menu zostaw ciemniejszy, ale spójny */
+.navbar-main,
+.navbar-contextual {
+    background: #111416 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* likwiduje jaśniejsze tła bloków galerii/miniatur */
+.thumbnailCategories,
+.thumbnails,
+#thumbnails,
+.loader,
+.action-buttons,
+.mw-piwigo-content {
+    background: transparent !important;
+}

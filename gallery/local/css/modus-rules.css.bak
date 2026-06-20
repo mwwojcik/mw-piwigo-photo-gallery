@@ -1,0 +1,37 @@
+/* Plik nie powstanie dopóki niżej nie zostanie coś wpisane.Po uzupełnieniu wymaganych informacji plik zostanie utworzony. */
+
+/* Ukrycie nazw plików pod zdjęciami */
+.thumbnails .wrap2 {
+ border: none !important;
+}
+
+/* Ukrycie nazw plików i legendy pod zdjęciami */
+.thumbnails .thumbLegend {
+    display: none !important;
+}
+
+/* Rozciągnięcie kontenera zdjęć na pełną dostępną szerokość */
+#content {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Wymuszenie elastyczności miniaturek */
+.thumbnails {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+}
+
+.thumbnails li {
+    flex-grow: 1 !important; /* To sprawia, że zdjęcia "puchną", by wypełnić wiersz */
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Zachowanie proporcji zdjęć wewnątrz elastycznych bloków */
+.thumbnails li img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Zapobiega deformacji zdjęcia */
+}
