@@ -2,7 +2,7 @@
 <div class="mw-home">
 
 <section class="mw-hero">
-  <img src="/gallery/local/images/home/hero.jpg" alt="" class="mw-hero-image">
+  <img src="/local/images/home/hero.jpg" alt="" class="mw-hero-image">
 
   <div class="mw-hero-overlay">
     <div class="mw-hero-content">      
@@ -28,7 +28,7 @@ Smutek, melancholię, ale również zachwyt nad cudownym kręgiem życia...
   </div>
 
   <div class="mw-about-image">
-    <img src="/gallery/local/images/home/mostek.jpg" alt="">
+    <img src="/local/images/home/mostek.jpg" alt="">
   </div>
 </section>
 
