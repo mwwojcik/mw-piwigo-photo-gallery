@@ -134,10 +134,13 @@ body .mw-label {
 
 body .mw-about {
     display: grid !important;
-    grid-template-columns: 460px 680px !important;
+    grid-template-columns: minmax(0, 0.676fr) minmax(0, 1fr) !important;
     gap: 70px !important;
     align-items: center !important;
     padding: 90px 0 70px !important;
+    box-sizing: border-box !important;
+    width: min(1180px, calc(100% - 80px)) !important;
+    max-width: 100% !important;
 }
 
 body .mw-about h2 {
@@ -303,12 +306,16 @@ body.section-categories #content:empty {
         max-width: none !important;
     }
 
-    body .mw-about {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 34px !important;
-        padding: 70px 0 60px !important;
-    }
+  body .mw-about {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.676fr) minmax(0, 1fr) !important;
+    gap: 70px !important;
+    align-items: center !important;
+    padding: 90px 0 70px !important;
+    box-sizing: border-box !important;
+    width: min(1180px, calc(100% - 80px)) !important;
+    max-width: 100% !important;
+}
 
     body .mw-about-text,
     body .mw-about-image {
