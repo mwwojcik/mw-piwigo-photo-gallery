@@ -6,9 +6,28 @@
 {/if}
 {if !empty($PLUGIN_INDEX_CONTENT_BEFORE)}{$PLUGIN_INDEX_CONTENT_BEFORE}{/if}
 
+{* Rozpoznaj widok albumow na podstawie klas strony Piwigo. *}
+{assign var=MW_IS_CATEGORY_SECTION value=false}
+{assign var=MW_IS_ALBUM value=false}
+{if !empty($BODY_CLASSES)}
+{foreach from=$BODY_CLASSES item=mw_body_class}
+{if $mw_body_class == 'section-categories'}
+{assign var=MW_IS_CATEGORY_SECTION value=true}
+{/if}
+{if preg_match('/^category-[0-9]+$/', $mw_body_class)}
+{assign var=MW_IS_ALBUM value=true}
+{/if}
+{/foreach}
+{/if}
+
 {assign var=IS_MW_HOME value=false}
-{if !empty($CATEGORIES) && empty($CONTENT) && empty($THUMBNAILS) && empty($CONTENT_DESCRIPTION) && empty($SEARCH_ID) && empty($category_search_results) && empty($tag_search_results) && !isset($chronology.TITLE)}
+{if $MW_IS_CATEGORY_SECTION && !$MW_IS_ALBUM && !isset($U_MODE_NORMAL) && !isset($FILE_CHRONOLOGY_VIEW) && !empty($CATEGORIES) && empty($CONTENT) && empty($THUMBNAILS) && empty($CONTENT_DESCRIPTION) && empty($SEARCH_ID) && empty($category_search_results) && empty($tag_search_results) && !isset($chronology.TITLE)}
 {assign var=IS_MW_HOME value=true}
+{/if}
+
+{assign var=MW_SHOW_SUBALBUMS value=false}
+{if $MW_IS_CATEGORY_SECTION && $MW_IS_ALBUM && !empty($CATEGORIES)}
+{assign var=MW_SHOW_SUBALBUMS value=true}
 {/if}
 
 {if !$IS_MW_HOME}
@@ -57,8 +76,8 @@
   {/foreach}
         </div>
     </li>
-{/if}    
-            
+{/if}
+
 {if !empty($image_orders)}
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" title="{'Sort order'|@translate}">
@@ -112,7 +131,7 @@
                         </a>
                     </li>
 {/if}
-{if isset($U_SLIDESHOW)}
+{if !$MW_SHOW_SUBALBUMS && isset($U_SLIDESHOW)}
                     <li class="nav-item">
                         <a class="nav-link" href="{if $theme_config->photoswipe}javascript:;{else}{$U_SLIDESHOW}{/if}" id="startSlideshow" title="{'slideshow'|@translate}" rel="nofollow">
                             <i class="fas fa-play fa-fw" aria-hidden="true"></i><span class="d-lg-none ml-2 text-capitalize">{'slideshow'|@translate}</span>
@@ -182,9 +201,7 @@
 
 
 {if $IS_MW_HOME}
-<div class="mw-page">
     {include file='./mw-home.tpl'}
-</div>
 {/if}
 
 <div class="container{if $theme_config->fluid_width}-fluid{/if}">
@@ -241,6 +258,12 @@
     <!-- End of content -->
 {/if}
 
+{if !$IS_MW_HOME && !empty($CATEGORIES)}
+    <!-- Start of categories -->
+    {$CATEGORIES}
+    <!-- End of categories -->
+{/if}
+
 {if !empty($category_search_results)}
 <div class="container{if $theme_config->fluid_width}-fluid{/if}">
     <h3 class="category_search_results">{'Album results for'|@translate} <em><strong>{$QUERY_SEARCH}</strong></em></h3>
@@ -252,7 +275,6 @@
 {/foreach}
         </strong></em>
     </p>
-</div>
 </div>
 {/if}
 
@@ -270,10 +292,13 @@
 </div>
 {/if}
 
-{if !empty($THUMBNAILS)}
+
+{if !$MW_SHOW_SUBALBUMS && !empty($THUMBNAILS)}
         <!-- Start of thumbnails -->
         <div id="thumbnails" class="row">{$THUMBNAILS}</div>
-{footer_script require='jquery'}{literal}$(document).ready(function(){$('#content img').load(function(){$('#content .col-inner').equalHeights()})});{/literal}{/footer_script}
+{if !isset($GDThumb) && !isset($GThumb)}
+{footer_script require='jquery'}{literal}$(document).ready(function(){$('#thumbnails img').on('load', function(){$('#thumbnails .col-inner').equalHeights()})});{/literal}{/footer_script}
+{/if}
 {if $theme_config->photoswipe}
         <div id="photoSwipeData">
 {assign var=idx value=0}
@@ -364,12 +389,12 @@ $('.card-thumbnail').find('img[src*="pwg_representative"]').each(function() {
 {/if}
     </div>
 </div>
-{if !empty($cats_navbar) || !empty($thumb_navbar)}
+{if !empty($cats_navbar) || (!$MW_SHOW_SUBALBUMS && !empty($thumb_navbar))}
 <div class="container{if $theme_config->fluid_width}-fluid{/if}">
 {if !empty($cats_navbar)}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$cats_navbar}
 {/if}
-{if !empty($thumb_navbar) && !isset($loaded_plugins['rv_tscroller'])}
+{if !$MW_SHOW_SUBALBUMS && !empty($thumb_navbar) && !isset($loaded_plugins['rv_tscroller'])}
     {include file='navigation_bar.tpl' fragment="content"|@get_extent:'navbar' navbar=$thumb_navbar}
 {/if}
 </div>
