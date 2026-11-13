@@ -1,10 +1,32 @@
-# IntelliJ
-.idea
-*.iml
-*.ipr
-*.iws
+# Piwigo contains many deployment and core files. Track only the maintained areas below.
+/gallery/**
 
-# Eclipse
-.settings
-.project
-.idea
+# Keep the gallery-local ignore file itself under version control.
+!/gallery/.gitignore
+
+# Local configuration and custom CSS/assets.
+!/gallery/local/
+!/gallery/local/**
+
+# The custom homepage plugin.
+!/gallery/plugins/
+!/gallery/plugins/mw_home/
+!/gallery/plugins/mw_home/**
+
+# Custom template overrides.
+!/gallery/template-extension/
+!/gallery/template-extension/**
+
+# Maintained theme trees. Other installed themes stay ignored.
+!/gallery/themes/
+!/gallery/themes/bootstrap_darkroom/
+!/gallery/themes/bootstrap_darkroom/**
+
+# Local deployment credentials and generated gallery configuration.
+/gallery/local/config/**
+
+# Local editor settings, deployment credentials, and backup copies.
+/.vscode/sftp.json
+/.idea/
+*.iml
+*.bak

@@ -46,7 +46,7 @@ Smutek, melancholię, ale również zachwyt nad cudownym kręgiem życia...
   {/if}
 
   <div class="mw-link-row">
-    <a href="/gallery/index.php?/category/5">Więcej →</a>
+    <a href="/index.php?/category/5">Więcej →</a>
   </div>
 </section>
 

@@ -260,7 +260,10 @@
 
 {if !$IS_MW_HOME && !empty($CATEGORIES)}
     <!-- Start of categories -->
-    {$CATEGORIES}
+    <section class="mw-subcategories" aria-labelledby="mw-subcategories-title">
+        <h1 class="mw-subcategories-heading" id="mw-subcategories-title">{$PAGE_TITLE|strip_tags|escape:'html'}</h1>
+        {$CATEGORIES}
+    </section>
     <!-- End of categories -->
 {/if}
 

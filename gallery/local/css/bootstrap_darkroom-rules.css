@@ -306,16 +306,12 @@ body.section-categories #content:empty {
         max-width: none !important;
     }
 
-  body .mw-about {
-    display: grid !important;
-    grid-template-columns: minmax(0, 0.676fr) minmax(0, 1fr) !important;
-    gap: 70px !important;
-    align-items: center !important;
-    padding: 90px 0 70px !important;
-    box-sizing: border-box !important;
-    width: min(1180px, calc(100% - 80px)) !important;
-    max-width: 100% !important;
-}
+    body .mw-about {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 34px !important;
+        padding: 70px 0 60px !important;
+    }
 
     body .mw-about-text,
     body .mw-about-image {
@@ -498,3 +494,255 @@ body.section-categories .content-list {
 .mw-piwigo-content {
     background: transparent !important;
 }
+
+
+/* PODALBUMY MW: START
+   Dopisz na koncu aktywnego custom CSS.
+   Wszystkie reguly dzialaja tylko wewnatrz .mw-subcategories.
+*/
+
+body .mw-subcategories {
+    width: min(1180px, calc(100% - 48px));
+    margin: 48px auto 80px;
+    clear: both;
+    color: #d6d0c6;
+}
+
+body .mw-subcategories-heading {
+    margin: 0 0 44px;
+    color: #c89b52;
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+/* Gotowa lista GDThumb lub standardowy wiersz Bootstrap Darkroom.
+   !important ograniczone do tej sekcji: neutralizuja wymiary i pozycje
+   inline przypisywane kaflom przez skrypt GDThumb oraz klasy Bootstrap.
+*/
+body .mw-subcategories > ul.thumbnailCategories,
+body .mw-subcategories > .row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px 32px;
+    align-items: start;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none;
+    position: static !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+body .mw-subcategories > ul.thumbnailCategories::before,
+body .mw-subcategories > ul.thumbnailCategories::after,
+body .mw-subcategories > .row::before,
+body .mw-subcategories > .row::after {
+    content: none !important;
+}
+
+/* GDThumb: zdjecie, a pod nim stale widoczny podpis. */
+body .mw-subcategories > ul.thumbnailCategories > li.gdthumb {
+    display: flex !important;
+    flex-direction: column;
+    position: static !important;
+    float: none !important;
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+body .mw-subcategories li.gdthumb > a {
+    order: 0;
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    clip: auto !important;
+    clip-path: none !important;
+    overflow: hidden !important;
+    text-decoration: none;
+    background: transparent !important;
+}
+
+body .mw-subcategories li.gdthumb > a > img.thumbnail,
+body .mw-subcategories li.gdthumb:hover > a > img.thumbnail {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    transform: none !important;
+    transition: none !important;
+    filter: none !important;
+    clip: auto !important;
+    clip-path: none !important;
+}
+
+body .mw-subcategories li.gdthumb > .thumbLegend,
+body .mw-subcategories li.gdthumb .thumbLegend .thumbName {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    color: #d6d0c6 !important;
+    text-align: left !important;
+    white-space: normal !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+body .mw-subcategories li.gdthumb > .thumbLegend {
+    order: 1;
+    margin-top: 20px !important;
+}
+
+body .mw-subcategories li.gdthumb .thumbTitle {
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #d6d0c6 !important;
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    font-size: clamp(1.6rem, 2.5vw, 2rem) !important;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: none !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+}
+
+body .mw-subcategories .Nb_images,
+body .mw-subcategories .thumbInfo,
+body .mw-subcategories .loader {
+    display: none !important;
+}
+
+/* Standardowy HTML Bootstrap Darkroom: ten sam spokojny wyglad. */
+body .mw-subcategories > .row > .col-outer {
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0;
+    flex: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body .mw-subcategories .card,
+body .mw-subcategories .card > .h-100 {
+    height: auto !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+body .mw-subcategories .card .card-img-top,
+body .mw-subcategories .card .card-img-left {
+    display: block !important;
+    float: none !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    filter: none !important;
+    transform: none !important;
+}
+
+body .mw-subcategories .card-body {
+    height: auto !important;
+    padding: 20px 0 0 !important;
+}
+
+body .mw-subcategories .card-title {
+    margin: 0 0 12px;
+    font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.25;
+    overflow: visible;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+body .mw-subcategories .card-title a {
+    color: #d6d0c6;
+    text-decoration: none;
+}
+
+body .mw-subcategories .card-title > img,
+body .mw-subcategories .card-footer,
+body .mw-subcategories .info-dates {
+    display: none !important;
+}
+
+body .mw-subcategories .description {
+    color: #aaa;
+    font: 0.95rem/1.8 Arial, Helvetica, sans-serif;
+    overflow-wrap: anywhere;
+}
+
+body .mw-subcategories a:focus-visible {
+    outline: 2px solid #c89b52;
+    outline-offset: 5px;
+}
+
+body .mw-subcategories .card-title a:hover {
+    color: #c89b52;
+}
+
+@media (max-width: 760px) {
+    body .mw-subcategories {
+        width: 100%;
+        margin: 28px auto 56px;
+    }
+    body .mw-subcategories-heading {
+        margin-bottom: 30px;
+    }
+    body .mw-subcategories > ul.thumbnailCategories,
+    body .mw-subcategories > .row {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+    }
+}
+
+/* PODALBUMY MW: END */
+
